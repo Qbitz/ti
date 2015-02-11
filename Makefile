@@ -10,10 +10,19 @@ ti.o: ti.cpp
 
 all: ti
 
+doc:
+	cd report &&\
+	rm -f *.aux *.dvi *.log *.pdf *.eps &&\
+	gnuplot time.gnuplot &&\
+	gnuplot speadup.gnuplot &&\
+	latex report.tex &&\
+	dvipdf report.dvi
+
 clean:
-	rm ti.o ti
+	rm -f ti.o ti
 
 do: clean all
 	./ti
+
 
 .PHONY: all clean do

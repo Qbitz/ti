@@ -1,4 +1,8 @@
 ti
 *.o
 *.sublime-workspace
-
+*.aux
+*.dvi
+*.log
+*.pdf
+*.eps
